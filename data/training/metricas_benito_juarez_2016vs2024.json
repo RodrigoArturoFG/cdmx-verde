@@ -1,0 +1,21 @@
+{
+  "alcaldia": "Benito Juárez",
+  "anio_base": 2016,
+  "anio_actual": 2024,
+  "total_puntos": 1685,
+  "ha_bosque_base": 8.01,
+  "ha_bosque_actual": 8.0,
+  "delta_ha": -0.01,
+  "delta_pct": -0.12,
+  "puntos_perdida": 1,
+  "puntos_ganancia": 0,
+  "ha_urbano_base": 7.99,
+  "ha_urbano_actual": 8.0,
+  "ha_pastizal_base": 0.85,
+  "ha_pastizal_actual": 0.85,
+  "ha_agua_base": 0.0,
+  "ha_agua_actual": 0.0,
+  "ha_suelo_base": 0.0,
+  "ha_suelo_actual": 0.0,
+  "ha_deforestado": 0.0
+}

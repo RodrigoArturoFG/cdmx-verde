@@ -1,0 +1,12 @@
+REPORTE COMPARATIVA CUAUHTÉMOC — 2016 vs 2024
+==================================================
+Puntos analizados  : 1,598
+Bosque 2016         : 8.0 ha
+Bosque 2024         : 8.0 ha
+Delta bosque       : -0.0 ha (-0.2%)
+Puntos pérdida     : 3
+Puntos ganancia    : 1
+
+Urbano  2016->2024   : 8.0 -> 8.0 ha
+Pastizal 2016->2024  : 0.0 -> 0.0 ha
+Deforestado        : 0.0 ha (zonas conservación)

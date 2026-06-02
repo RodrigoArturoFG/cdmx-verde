@@ -1,0 +1,32 @@
+{
+  "alcaldia": "Xochimilco",
+  "base": {
+    "alcaldia": "Xochimilco",
+    "anio": 2016,
+    "ha_bosque": 6.73,
+    "ha_deforestado": 0.0,
+    "ha_urbano": 7.29,
+    "ha_pastizal": 8.83,
+    "ha_agua": 6.57,
+    "ha_suelo_desnudo": 2.63,
+    "total_ha": 32.05,
+    "png_url": null
+  },
+  "actual": {
+    "alcaldia": "Xochimilco",
+    "anio": 2024,
+    "ha_bosque": 6.53,
+    "ha_deforestado": 0.82,
+    "ha_urbano": 7.91,
+    "ha_pastizal": 6.78,
+    "ha_agua": 6.87,
+    "ha_suelo_desnudo": 3.14,
+    "total_ha": 32.05,
+    "png_url": null
+  },
+  "delta_ha": -0.2,
+  "delta_pct": -2.97,
+  "puntos_perdida": 105,
+  "puntos_ganancia": 85,
+  "png_comparativa_url": null
+}

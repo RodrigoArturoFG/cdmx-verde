@@ -1,0 +1,21 @@
+{
+  "alcaldia": "Miguel Hidalgo",
+  "anio_base": 2016,
+  "anio_actual": 2024,
+  "total_puntos": 3186,
+  "ha_bosque_base": 8.31,
+  "ha_bosque_actual": 7.16,
+  "delta_ha": -1.15,
+  "delta_pct": -13.84,
+  "puntos_perdida": 169,
+  "puntos_ganancia": 54,
+  "ha_urbano_base": 7.97,
+  "ha_urbano_actual": 8.0,
+  "ha_pastizal_base": 7.18,
+  "ha_pastizal_actual": 7.59,
+  "ha_agua_base": 7.9,
+  "ha_agua_actual": 8.0,
+  "ha_suelo_base": 0.5,
+  "ha_suelo_actual": 1.11,
+  "ha_deforestado": 0.0
+}

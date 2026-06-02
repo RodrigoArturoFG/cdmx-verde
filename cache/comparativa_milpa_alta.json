@@ -1,0 +1,30 @@
+{
+  "alcaldia": "Milpa Alta",
+  "base": {
+    "alcaldia": "Milpa Alta",
+    "anio": 2016,
+    "ha_bosque": 6.65,
+    "ha_deforestado": 0.0,
+    "ha_urbano": 6.69,
+    "ha_pastizal": 8.42,
+    "ha_agua": 0.34,
+    "ha_suelo_desnudo": 2.33,
+    "total_ha": 24.43,
+    "png_url": null
+  },
+  "actual": {
+    "alcaldia": "Milpa Alta",
+    "anio": 2024,
+    "ha_bosque": 7.56,
+    "ha_deforestado": 0.55,
+    "ha_urbano": 6.97,
+    "ha_pastizal": 6.37,
+    "ha_agua": 0.31,
+    "ha_suelo_desnudo": 2.67,
+    "total_ha": 24.43,
+    "png_url": null
+  },
+  "delta_ha": 0.91,
+  "delta_pct": 13.68,
+  "png_comparativa_url": null
+}

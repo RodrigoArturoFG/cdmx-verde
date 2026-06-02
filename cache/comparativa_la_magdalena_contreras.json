@@ -1,0 +1,30 @@
+{
+  "alcaldia": "La Magdalena Contreras",
+  "base": {
+    "alcaldia": "La Magdalena Contreras",
+    "anio": 2016,
+    "ha_bosque": 8.19,
+    "ha_deforestado": 0.0,
+    "ha_urbano": 7.77,
+    "ha_pastizal": 7.26,
+    "ha_agua": 0.0,
+    "ha_suelo_desnudo": 6.59,
+    "total_ha": 29.81,
+    "png_url": null
+  },
+  "actual": {
+    "alcaldia": "La Magdalena Contreras",
+    "anio": 2024,
+    "ha_bosque": 8.0,
+    "ha_deforestado": 0.43,
+    "ha_urbano": 7.84,
+    "ha_pastizal": 6.09,
+    "ha_agua": 0.01,
+    "ha_suelo_desnudo": 7.44,
+    "total_ha": 29.81,
+    "png_url": null
+  },
+  "delta_ha": -0.19,
+  "delta_pct": -2.32,
+  "png_comparativa_url": null
+}

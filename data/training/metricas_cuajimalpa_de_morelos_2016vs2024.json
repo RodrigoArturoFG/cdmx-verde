@@ -1,0 +1,21 @@
+{
+  "alcaldia": "Cuajimalpa de Morelos",
+  "anio_base": 2016,
+  "anio_actual": 2024,
+  "total_puntos": 3035,
+  "ha_bosque_base": 8.78,
+  "ha_bosque_actual": 7.92,
+  "delta_ha": -0.86,
+  "delta_pct": -9.79,
+  "puntos_perdida": 123,
+  "puntos_ganancia": 37,
+  "ha_urbano_base": 7.52,
+  "ha_urbano_actual": 7.46,
+  "ha_pastizal_base": 9.5,
+  "ha_pastizal_actual": 6.41,
+  "ha_agua_base": 2.35,
+  "ha_agua_actual": 2.48,
+  "ha_suelo_base": 2.2,
+  "ha_suelo_actual": 5.12,
+  "ha_deforestado": 0.96
+}

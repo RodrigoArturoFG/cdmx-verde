@@ -1,0 +1,12 @@
+REPORTE COMPARATIVA AZCAPOTZALCO — 2016 vs 2024
+==================================================
+Puntos analizados  : 2,728
+Bosque 2016         : 9.4 ha
+Bosque 2024         : 7.9 ha
+Delta bosque       : -1.5 ha (-15.5%)
+Puntos pérdida     : 158
+Puntos ganancia    : 12
+
+Urbano  2016->2024   : 8.0 -> 8.0 ha
+Pastizal 2016->2024  : 6.8 -> 7.8 ha
+Deforestado        : 0.0 ha (zonas conservación)

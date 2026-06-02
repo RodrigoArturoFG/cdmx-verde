@@ -1,0 +1,12 @@
+REPORTE COMPARATIVA IZTAPALAPA — 2016 vs 2024
+==================================================
+Puntos analizados  : 3,502
+Bosque 2016         : 7.1 ha
+Bosque 2024         : 7.3 ha
+Delta bosque       : +0.2 ha (+3.5%)
+Puntos pérdida     : 127
+Puntos ganancia    : 152
+
+Urbano  2016->2024   : 8.1 -> 8.0 ha
+Pastizal 2016->2024  : 7.9 -> 7.7 ha
+Deforestado        : 0.0 ha (zonas conservación)

@@ -1,0 +1,59 @@
+# ──────────────────────────────────────────────────────────────
+# Secretos y configuración local
+# ──────────────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+# Claves de service account de Google / Earth Engine (NUNCA subir credenciales)
+*-service-account.json
+service-account*.json
+
+# ──────────────────────────────────────────────────────────────
+# Python
+# ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# ──────────────────────────────────────────────────────────────
+# Frontend (Node / Vite)
+# ──────────────────────────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ──────────────────────────────────────────────────────────────
+# IDEs y editores
+# ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+.history/
+
+# ──────────────────────────────────────────────────────────────
+# Logs y sistema operativo
+# ──────────────────────────────────────────────────────────────
+*.log
+.DS_Store
+Thumbs.db
+
+# ──────────────────────────────────────────────────────────────
+# Datos y salidas del proyecto
+# ──────────────────────────────────────────────────────────────
+# Datos crudos de INEGI (~388 MB, incluye archivos > 100 MB que GitHub rechaza).
+# No se necesitan para desplegar: solo sirven para regenerar data/alcaldias/
+# (el geojson ya versionado). Si hay que regenerarlo, se descargan de INEGI.
+data/raw/
+
+# Salidas del demo personal (GeoTIFFs + PNG, ~20 MB, regenerables con 99_demo_final.py).
+# No las usa el backend ni el frontend.
+viz/
+
+# NOTA: data/training/, data/alcaldias/ y cache/ SI se versionan a proposito,
+# para que otros equipos no tengan que reprocesar ~1 hora en GEE.

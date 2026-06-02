@@ -1,0 +1,12 @@
+REPORTE COMPARATIVA MILPA ALTA — 2016 vs 2024
+==================================================
+Puntos analizados  : 2,443
+Bosque 2016         : 6.7 ha
+Bosque 2024         : 7.6 ha
+Delta bosque       : +0.9 ha (+13.7%)
+Puntos pérdida     : 55
+Puntos ganancia    : 146
+
+Urbano  2016->2024   : 6.7 -> 7.0 ha
+Pastizal 2016->2024  : 8.4 -> 6.4 ha
+Deforestado        : 0.6 ha (zonas conservación)

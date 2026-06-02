@@ -1,0 +1,30 @@
+{
+  "alcaldia": "Tláhuac",
+  "base": {
+    "alcaldia": "Tláhuac",
+    "anio": 2016,
+    "ha_bosque": 5.13,
+    "ha_deforestado": 0.0,
+    "ha_urbano": 7.59,
+    "ha_pastizal": 8.49,
+    "ha_agua": 8.88,
+    "ha_suelo_desnudo": 4.74,
+    "total_ha": 34.83,
+    "png_url": null
+  },
+  "actual": {
+    "alcaldia": "Tláhuac",
+    "anio": 2024,
+    "ha_bosque": 5.89,
+    "ha_deforestado": 0.02,
+    "ha_urbano": 7.99,
+    "ha_pastizal": 7.74,
+    "ha_agua": 7.67,
+    "ha_suelo_desnudo": 5.52,
+    "total_ha": 34.83,
+    "png_url": null
+  },
+  "delta_ha": 0.76,
+  "delta_pct": 14.81,
+  "png_comparativa_url": null
+}

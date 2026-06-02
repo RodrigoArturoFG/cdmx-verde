@@ -1,0 +1,12 @@
+REPORTE COMPARATIVA COYOACÁN — 2016 vs 2024
+==================================================
+Puntos analizados  : 3,617
+Bosque 2016         : 6.4 ha
+Bosque 2024         : 7.9 ha
+Delta bosque       : +1.5 ha (+23.0%)
+Puntos pérdida     : 117
+Puntos ganancia    : 264
+
+Urbano  2016->2024   : 8.1 -> 8.0 ha
+Pastizal 2016->2024  : 9.9 -> 7.6 ha
+Deforestado        : 0.0 ha (zonas conservación)

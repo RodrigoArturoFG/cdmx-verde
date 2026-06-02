@@ -1,0 +1,45 @@
+REPORTE DE VALIDACIÓN DEL DATASET - Rol 3
+==================================================
+
+Total train: 4,482
+Total val:   1,118
+
+Conteo por clase (train):
+clase
+deforestado      1781
+__none__          640
+agua              640
+bosque            640
+urbano            428
+suelo_desnudo     330
+pastizal           23
+
+Conteo por alcaldía (train):
+alcaldia
+Milpa Alta                933
+Tlalpan                   782
+Tláhuac                   703
+Xochimilco                598
+Gustavo A. Madero         269
+Iztapalapa                263
+Álvaro Obregón            202
+Cuajimalpa de Morelos     114
+Coyoacán                  111
+Miguel Hidalgo            109
+La Magdalena Contreras    101
+Benito Juárez              65
+Venustiano Carranza        60
+Azcapotzalco               60
+Iztacalco                  60
+Cuauhtémoc                 52
+
+Estadísticas espectrales por clase (train):
+                    B02       B03       B04       B08       B11       B12   NDVI   NDWI
+clase                                                                                  
+__none__        637.897   852.212  1106.177  1883.680  2328.273  1828.966  0.261 -0.375
+agua            460.965   773.748   575.768  1222.534   508.719   405.966  0.345 -0.179
+bosque          329.773   487.256   497.796  1820.398  1441.340   924.165  0.591 -0.587
+deforestado     731.841   967.403  1219.527  2038.761  2360.919  1893.273  0.259 -0.361
+pastizal        858.239  1182.283  1446.826  3145.239  2902.717  2133.957  0.334 -0.420
+suelo_desnudo   931.718  1103.880  1379.561  1884.512  1928.109  1679.373  0.169 -0.273
+urbano         1075.576  1227.971  1456.898  1829.871  1993.748  1798.209  0.134 -0.221

@@ -1,0 +1,21 @@
+{
+  "alcaldia": "Álvaro Obregón",
+  "anio_base": 2016,
+  "anio_actual": 2024,
+  "total_puntos": 2716,
+  "ha_bosque_base": 8.1,
+  "ha_bosque_actual": 7.96,
+  "delta_ha": -0.14,
+  "delta_pct": -1.73,
+  "puntos_perdida": 61,
+  "puntos_ganancia": 47,
+  "ha_urbano_base": 7.9,
+  "ha_urbano_actual": 7.84,
+  "ha_pastizal_base": 7.05,
+  "ha_pastizal_actual": 6.54,
+  "ha_agua_base": 1.73,
+  "ha_agua_actual": 2.13,
+  "ha_suelo_base": 2.38,
+  "ha_suelo_actual": 2.25,
+  "ha_deforestado": 0.44
+}

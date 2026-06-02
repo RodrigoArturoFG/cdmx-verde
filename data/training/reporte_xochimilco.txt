@@ -1,0 +1,12 @@
+REPORTE COMPARATIVA XOCHIMILCO — 2016 vs 2024
+==================================================
+Puntos analizados  : 3,205
+Bosque 2016         : 6.7 ha
+Bosque 2024         : 6.5 ha
+Delta bosque       : -0.2 ha (-3.0%)
+Puntos pérdida     : 105
+Puntos ganancia    : 85
+
+Urbano  2016->2024   : 7.3 -> 7.9 ha
+Pastizal 2016->2024  : 8.8 -> 6.8 ha
+Deforestado        : 0.8 ha (zonas conservación)

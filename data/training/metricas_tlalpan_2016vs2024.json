@@ -1,0 +1,21 @@
+{
+  "alcaldia": "Tlalpan",
+  "anio_base": 2016,
+  "anio_actual": 2024,
+  "total_puntos": 3066,
+  "ha_bosque_base": 8.0,
+  "ha_bosque_actual": 7.94,
+  "delta_ha": -0.06,
+  "delta_pct": -0.75,
+  "puntos_perdida": 96,
+  "puntos_ganancia": 90,
+  "ha_urbano_base": 7.48,
+  "ha_urbano_actual": 7.77,
+  "ha_pastizal_base": 7.89,
+  "ha_pastizal_actual": 6.73,
+  "ha_agua_base": 3.64,
+  "ha_agua_actual": 3.65,
+  "ha_suelo_base": 3.65,
+  "ha_suelo_actual": 3.61,
+  "ha_deforestado": 0.96
+}

@@ -1,0 +1,21 @@
+{
+  "alcaldia": "Iztacalco",
+  "anio_base": 2016,
+  "anio_actual": 2024,
+  "total_puntos": 2467,
+  "ha_bosque_base": 4.01,
+  "ha_bosque_actual": 3.03,
+  "delta_ha": -0.98,
+  "delta_pct": -24.44,
+  "puntos_perdida": 129,
+  "puntos_ganancia": 31,
+  "ha_urbano_base": 7.88,
+  "ha_urbano_actual": 8.0,
+  "ha_pastizal_base": 10.76,
+  "ha_pastizal_actual": 7.98,
+  "ha_agua_base": 0.04,
+  "ha_agua_actual": 1.54,
+  "ha_suelo_base": 1.98,
+  "ha_suelo_actual": 4.12,
+  "ha_deforestado": 0.0
+}

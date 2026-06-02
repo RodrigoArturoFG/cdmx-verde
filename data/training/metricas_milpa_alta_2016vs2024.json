@@ -1,0 +1,21 @@
+{
+  "alcaldia": "Milpa Alta",
+  "anio_base": 2016,
+  "anio_actual": 2024,
+  "total_puntos": 2443,
+  "ha_bosque_base": 6.65,
+  "ha_bosque_actual": 7.56,
+  "delta_ha": 0.91,
+  "delta_pct": 13.68,
+  "puntos_perdida": 55,
+  "puntos_ganancia": 146,
+  "ha_urbano_base": 6.69,
+  "ha_urbano_actual": 6.97,
+  "ha_pastizal_base": 8.42,
+  "ha_pastizal_actual": 6.37,
+  "ha_agua_base": 0.34,
+  "ha_agua_actual": 0.31,
+  "ha_suelo_base": 2.33,
+  "ha_suelo_actual": 2.67,
+  "ha_deforestado": 0.55
+}

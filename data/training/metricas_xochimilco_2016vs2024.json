@@ -1,0 +1,21 @@
+{
+  "alcaldia": "Xochimilco",
+  "anio_base": 2016,
+  "anio_actual": 2024,
+  "total_puntos": 3205,
+  "ha_bosque_base": 6.73,
+  "ha_bosque_actual": 6.53,
+  "delta_ha": -0.2,
+  "delta_pct": -2.97,
+  "puntos_perdida": 105,
+  "puntos_ganancia": 85,
+  "ha_urbano_base": 7.29,
+  "ha_urbano_actual": 7.91,
+  "ha_pastizal_base": 8.83,
+  "ha_pastizal_actual": 6.78,
+  "ha_agua_base": 6.57,
+  "ha_agua_actual": 6.87,
+  "ha_suelo_base": 2.63,
+  "ha_suelo_actual": 3.14,
+  "ha_deforestado": 0.82
+}

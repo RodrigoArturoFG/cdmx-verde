@@ -1,0 +1,12 @@
+REPORTE COMPARATIVA VENUSTIANO CARRANZA — 2016 vs 2024
+==================================================
+Puntos analizados  : 3,886
+Bosque 2016         : 7.8 ha
+Bosque 2024         : 7.8 ha
+Delta bosque       : +0.0 ha (+0.1%)
+Puntos pérdida     : 78
+Puntos ganancia    : 79
+
+Urbano  2016->2024   : 7.9 -> 8.0 ha
+Pastizal 2016->2024  : 7.6 -> 7.8 ha
+Deforestado        : 0.0 ha (zonas conservación)

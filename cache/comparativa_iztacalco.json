@@ -1,0 +1,32 @@
+{
+  "alcaldia": "Iztacalco",
+  "base": {
+    "alcaldia": "Iztacalco",
+    "anio": 2016,
+    "ha_bosque": 4.01,
+    "ha_deforestado": 0.0,
+    "ha_urbano": 7.88,
+    "ha_pastizal": 10.76,
+    "ha_agua": 0.04,
+    "ha_suelo_desnudo": 1.98,
+    "total_ha": 24.67,
+    "png_url": null
+  },
+  "actual": {
+    "alcaldia": "Iztacalco",
+    "anio": 2024,
+    "ha_bosque": 3.03,
+    "ha_deforestado": 0.0,
+    "ha_urbano": 8.0,
+    "ha_pastizal": 7.98,
+    "ha_agua": 1.54,
+    "ha_suelo_desnudo": 4.12,
+    "total_ha": 24.67,
+    "png_url": null
+  },
+  "delta_ha": -0.98,
+  "delta_pct": -24.44,
+  "puntos_perdida": 129,
+  "puntos_ganancia": 31,
+  "png_comparativa_url": null
+}

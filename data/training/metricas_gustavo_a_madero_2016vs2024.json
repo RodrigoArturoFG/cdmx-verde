@@ -1,0 +1,21 @@
+{
+  "alcaldia": "Gustavo A. Madero",
+  "anio_base": 2016,
+  "anio_actual": 2024,
+  "total_puntos": 2991,
+  "ha_bosque_base": 4.44,
+  "ha_bosque_actual": 7.06,
+  "delta_ha": 2.62,
+  "delta_pct": 59.01,
+  "puntos_perdida": 29,
+  "puntos_ganancia": 291,
+  "ha_urbano_base": 8.09,
+  "ha_urbano_actual": 8.0,
+  "ha_pastizal_base": 9.99,
+  "ha_pastizal_actual": 6.75,
+  "ha_agua_base": 5.35,
+  "ha_agua_actual": 5.84,
+  "ha_suelo_base": 2.04,
+  "ha_suelo_actual": 2.26,
+  "ha_deforestado": 0.0
+}

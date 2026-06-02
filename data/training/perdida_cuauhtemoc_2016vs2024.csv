@@ -1,0 +1,4 @@
+lon,lat,alcaldia,clase_base,clase_actual,NDVI_base,NDVI_actual,B08_base,B08_actual,cambio,perdida_bosque,ganancia_bosque
+-99.15276221032576,19.405092357200463,Cuauhtémoc,bosque,urbano,0.04954715,0.20673765,1477.5,1898.5,True,True,False
+-99.17162683129226,19.415872140609896,Cuauhtémoc,bosque,urbano,0.33788234,0.509434,1421.5,1760.0,True,True,False
+-99.15339103102464,19.404373704973164,Cuauhtémoc,bosque,urbano,0.3621946,0.5844097,1589.0,1748.0,True,True,False

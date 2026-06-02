@@ -1,0 +1,2 @@
+lon,lat,alcaldia,clase_base,clase_actual,NDVI_base,NDVI_actual,B08_base,B08_actual,cambio,perdida_bosque,ganancia_bosque
+-99.15590631382015,19.37149536557439,Benito Juárez,bosque,urbano,0.61184883,0.81750244,2367.0,2310.5,True,True,False

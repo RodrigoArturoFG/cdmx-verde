@@ -1,0 +1,12 @@
+REPORTE COMPARATIVA MIGUEL HIDALGO — 2016 vs 2024
+==================================================
+Puntos analizados  : 3,186
+Bosque 2016         : 8.3 ha
+Bosque 2024         : 7.2 ha
+Delta bosque       : -1.1 ha (-13.8%)
+Puntos pérdida     : 169
+Puntos ganancia    : 54
+
+Urbano  2016->2024   : 8.0 -> 8.0 ha
+Pastizal 2016->2024  : 7.2 -> 7.6 ha
+Deforestado        : 0.0 ha (zonas conservación)

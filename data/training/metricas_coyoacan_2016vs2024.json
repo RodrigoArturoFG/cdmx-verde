@@ -1,0 +1,21 @@
+{
+  "alcaldia": "Coyoacán",
+  "anio_base": 2016,
+  "anio_actual": 2024,
+  "total_puntos": 3617,
+  "ha_bosque_base": 6.4,
+  "ha_bosque_actual": 7.87,
+  "delta_ha": 1.47,
+  "delta_pct": 22.97,
+  "puntos_perdida": 117,
+  "puntos_ganancia": 264,
+  "ha_urbano_base": 8.06,
+  "ha_urbano_actual": 8.0,
+  "ha_pastizal_base": 9.91,
+  "ha_pastizal_actual": 7.62,
+  "ha_agua_base": 4.3,
+  "ha_agua_actual": 5.68,
+  "ha_suelo_base": 7.5,
+  "ha_suelo_actual": 7.0,
+  "ha_deforestado": 0.0
+}

@@ -1,0 +1,32 @@
+{
+  "alcaldia": "Venustiano Carranza",
+  "base": {
+    "alcaldia": "Venustiano Carranza",
+    "anio": 2016,
+    "ha_bosque": 7.77,
+    "ha_deforestado": 0.0,
+    "ha_urbano": 7.87,
+    "ha_pastizal": 7.59,
+    "ha_agua": 5.01,
+    "ha_suelo_desnudo": 10.62,
+    "total_ha": 38.86,
+    "png_url": null
+  },
+  "actual": {
+    "alcaldia": "Venustiano Carranza",
+    "anio": 2024,
+    "ha_bosque": 7.78,
+    "ha_deforestado": 0.0,
+    "ha_urbano": 8.0,
+    "ha_pastizal": 7.76,
+    "ha_agua": 7.5,
+    "ha_suelo_desnudo": 7.82,
+    "total_ha": 38.86,
+    "png_url": null
+  },
+  "delta_ha": 0.01,
+  "delta_pct": 0.13,
+  "puntos_perdida": 78,
+  "puntos_ganancia": 79,
+  "png_comparativa_url": null
+}

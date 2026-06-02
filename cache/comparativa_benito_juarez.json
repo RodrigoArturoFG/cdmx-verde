@@ -1,0 +1,30 @@
+{
+  "alcaldia": "Benito Juárez",
+  "base": {
+    "alcaldia": "Benito Juárez",
+    "anio": 2016,
+    "ha_bosque": 8.01,
+    "ha_deforestado": 0.0,
+    "ha_urbano": 7.99,
+    "ha_pastizal": 0.85,
+    "ha_agua": 0.0,
+    "ha_suelo_desnudo": 0.0,
+    "total_ha": 16.85,
+    "png_url": null
+  },
+  "actual": {
+    "alcaldia": "Benito Juárez",
+    "anio": 2024,
+    "ha_bosque": 8.0,
+    "ha_deforestado": 0.0,
+    "ha_urbano": 8.0,
+    "ha_pastizal": 0.85,
+    "ha_agua": 0.0,
+    "ha_suelo_desnudo": 0.0,
+    "total_ha": 16.85,
+    "png_url": null
+  },
+  "delta_ha": -0.01,
+  "delta_pct": -0.12,
+  "png_comparativa_url": null
+}

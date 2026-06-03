@@ -3,7 +3,7 @@ import MapaAlcaldias from './components/MapaAlcaldias.jsx'
 import PanelControl from './components/PanelControl.jsx'
 import ComparativaPanel from './components/ComparativaPanel.jsx'
 import ResultadosCard from './components/ResultadosCard.jsx'
-import { fetchListaAlcaldias, fetchComparativa, lanzarPipeline, pollJob, fetchPuntosPerdida } from './api.js'
+import { fetchListaAlcaldias, fetchComparativa, lanzarPipeline, pollJob, fetchPuntosPerdida, fetchAlcaldias } from './api.js'
 
 const COLORES_ALCALDIA = {
   'Tlalpan': '#2d6a4f', 'Milpa Alta': '#40916c', 'Xochimilco': '#52b788',
@@ -16,6 +16,7 @@ const COLORES_ALCALDIA = {
 
 export default function App() {
   const [lista, setLista] = useState([])
+  const [geojson, setGeojson] = useState(null)
   const [alcaldiaSeleccionada, setAlcaldiaSeleccionada] = useState(null)
   const [comparativa, setComparativa] = useState(null)
   const [puntosPerdida, setPuntosPerdida] = useState([])
@@ -25,7 +26,12 @@ export default function App() {
 
   useEffect(() => {
     fetchListaAlcaldias().then(setLista).catch(() => {})
+    fetchAlcaldias().then(setGeojson).catch(() => {})
   }, [])
+
+  const featureSeleccionada = geojson && alcaldiaSeleccionada
+    ? geojson.features.find(f => f.properties.alcaldia === alcaldiaSeleccionada)
+    : null
 
   const seleccionar = async (nombre) => {
     if (nombre === alcaldiaSeleccionada) return
@@ -114,6 +120,7 @@ export default function App() {
 
         <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <MapaAlcaldias
+            geojson={geojson}
             seleccionada={alcaldiaSeleccionada}
             onSeleccionar={seleccionar}
             colores={COLORES_ALCALDIA}
@@ -121,7 +128,10 @@ export default function App() {
             puntosPerdida={puntosPerdida}
           />
           {comparativa && (
-            <ComparativaPanel comparativa={comparativa} />
+            <ComparativaPanel
+              comparativa={comparativa}
+              feature={featureSeleccionada}
+            />
           )}
         </main>
       </div>

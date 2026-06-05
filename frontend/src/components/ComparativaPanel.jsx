@@ -139,11 +139,26 @@ function FitToFeature({ feature }) {
 }
 
 function MiniMapaSentinel({ feature, anio }) {
-  // EOX Sentinel-2 cloudless tiene cobertura real solo 2018-2024.
-  // Para "2016" usamos el mosaico 2018 (el más antiguo con datos reales).
-  // El análisis sí usa Dynamic World 2016 — el mosaico solo es para visualización.
-  const anioMosaico = anio < 2018 ? 2018 : anio
-  const url = `https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-${anioMosaico}_3857/default/g/{z}/{y}/{x}.jpg`
+  // Composite Sentinel-2 generado por Google Earth Engine para la temporada de
+  // lluvias (jul-oct) del año dado. Usar los mismos meses en 2016 y 2024 hace que
+  // la comparación sea justa (misma estación = pasto verde en ambos).
+  const [url, setUrl] = useState(null)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    let activo = true
+    setUrl(null)
+    setError(null)
+    fetch(`/imagenes/mosaico?anio=${anio}`)
+      .then(async r => {
+        if (!r.ok) throw new Error((await r.json()).detail || `HTTP ${r.status}`)
+        return r.json()
+      })
+      .then(d => { if (activo) setUrl(d.url) })
+      .catch(e => { if (activo) setError(e.message) })
+    return () => { activo = false }
+  }, [anio])
+
   return (
     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
       <div style={{
@@ -152,14 +167,21 @@ function MiniMapaSentinel({ feature, anio }) {
         borderBottom: '1px solid #e0e0d8',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center'
       }}>
-        <span>Sentinel-2 cloudless · {anio}</span>
-        {anio !== anioMosaico && (
-          <span style={{ fontSize: 10, fontWeight: 400, color: '#888' }}>
-            mosaico {anioMosaico} (más antiguo público)
-          </span>
-        )}
+        <span>Sentinel-2 · {anio}</span>
+        <span style={{ fontSize: 10, fontWeight: 400, color: '#888' }}>
+          temporada lluvias (jul–oct)
+        </span>
       </div>
-      <div style={{ flex: 1, minHeight: 260 }}>
+      <div style={{ flex: 1, minHeight: 260, position: 'relative' }}>
+        {error && (
+          <div style={{
+            position: 'absolute', inset: 0, zIndex: 500, padding: 16,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            textAlign: 'center', fontSize: 12, color: '#991b1b', background: '#fef2f2'
+          }}>
+            No se pudo generar el mosaico GEE: {error}
+          </div>
+        )}
         <MapContainer
           center={[19.35, -99.13]}
           zoom={11}
@@ -167,11 +189,13 @@ function MiniMapaSentinel({ feature, anio }) {
           scrollWheelZoom={false}
           attributionControl={false}
         >
-          <TileLayer
-            attribution='Sentinel-2 cloudless &copy; EOX IT Services GmbH (Contains modified Copernicus Sentinel data)'
-            url={url}
-            maxZoom={14}
-          />
+          {url && (
+            <TileLayer
+              attribution='Sentinel-2 (Copernicus) vía Google Earth Engine'
+              url={url}
+              maxZoom={16}
+            />
+          )}
           {feature && (
             <GeoJSON
               data={feature}
@@ -204,7 +228,7 @@ function ImagenesTab({ alcaldia, feature }) {
         padding: '8px 20px', fontSize: 11, color: '#888',
         display: 'flex', justifyContent: 'space-between', gap: 12
       }}>
-        <span>Mosaicos Sentinel-2 cloudless de EOX (Copernicus). El polígono amarillo marca los límites de {alcaldia}.</span>
+        <span>Composites Sentinel-2 (Copernicus vía Google Earth Engine), temporada de lluvias jul–oct, mismos meses en ambos años. El polígono amarillo marca los límites de {alcaldia}.</span>
         <span>Arrastra/zoom para explorar.</span>
       </div>
     </div>

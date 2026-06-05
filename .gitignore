@@ -54,6 +54,7 @@ data/raw/
 # Salidas del demo personal (GeoTIFFs + PNG, ~20 MB, regenerables con 99_demo_final.py).
 # No las usa el backend ni el frontend.
 viz/
-
+.claude
+claude.md
 # NOTA: data/training/, data/alcaldias/ y cache/ SI se versionan a proposito,
 # para que otros equipos no tengan que reprocesar ~1 hora en GEE.

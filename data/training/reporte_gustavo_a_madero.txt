@@ -1,12 +1,12 @@
 REPORTE COMPARATIVA GUSTAVO A. MADERO — 2016 vs 2024
 ==================================================
 Puntos analizados  : 2,991
-Bosque 2016         : 4.4 ha
-Bosque 2024         : 7.1 ha
-Delta bosque       : +2.6 ha (+59.0%)
+Bosque 2016         : 227.5 ha
+Bosque 2024         : 435.9 ha
+Delta bosque       : +208.3 ha (+91.6%)
 Puntos pérdida     : 29
 Puntos ganancia    : 291
 
-Urbano  2016->2024   : 8.1 -> 8.0 ha
-Pastizal 2016->2024  : 10.0 -> 6.8 ha
+Urbano  2016->2024   : 7,516.8 -> 7,548.1 ha
+Pastizal 2016->2024  : 1,008.5 -> 775.6 ha
 Deforestado        : 0.0 ha (zonas conservación)

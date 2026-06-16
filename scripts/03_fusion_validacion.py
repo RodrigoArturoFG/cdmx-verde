@@ -15,6 +15,8 @@ import sys
 import numpy as np
 import pandas as pd
 import geopandas as gpd
+import ee
+from dotenv import load_dotenv
 from pathlib import Path
 from shapely.geometry import Point
 from scipy.spatial import cKDTree
@@ -22,6 +24,9 @@ from scipy.spatial import cKDTree
 ROOT = Path(__file__).resolve().parents[1]
 ALC  = ROOT / "data" / "alcaldias" / "alcaldias_cdmx.geojson"
 OUT  = ROOT / "data" / "training"
+
+load_dotenv(ROOT / ".env")
+GEE_PROJECT = os.environ.get("GEE_PROJECT")
 
 BANDAS = ["B02", "B03", "B04", "B08", "B11", "B12"]
 CONSERVACION = {
@@ -31,6 +36,15 @@ CONSERVACION = {
     "Álvaro Obregón", "Alvaro Obregon",
     "Tláhuac", "Tlahuac",
 }
+
+# Dynamic World labels -> clases del proyecto (mismo remapeo que el script 02):
+# 0=agua,1=arboles,2=pasto,3=veg_inundada,4=cultivos,5=arbusto,6=construido,7=desnudo
+# se remapea a: 1=bosque, 2=pastizal, 3=urbano, 4=suelo_desnudo, 5=agua
+DW_KEYS   = [0, 1, 2, 3, 4, 5, 6, 7]
+DW_VALUES = [5, 1, 2, 2, 2, 2, 3, 4]
+# id de clase -> nombre usado en el JSON de métricas (6 = deforestado, derivado del cambio)
+CLASE_POR_ID = {1: "bosque", 2: "pastizal", 3: "urbano", 4: "suelo_desnudo", 5: "agua", 6: "deforestado"}
+CLASES = ["bosque", "pastizal", "urbano", "suelo_desnudo", "agua", "deforestado"]
 
 
 def slug(nombre: str) -> str:
@@ -133,14 +147,115 @@ def marcar_deforestado(df: pd.DataFrame, alcaldia: str) -> pd.DataFrame:
     return df
 
 
-def calcular_metricas(comp: pd.DataFrame, alcaldia: str, ab: int, aa: int) -> dict:
-    ha = 0.01  # pixel 10×10 m
+def inicializar_ee() -> bool:
+    """Inicializa Earth Engine. Devuelve False si no es posible (se usará el método legado)."""
+    if not GEE_PROJECT:
+        return False
+    try:
+        ee.Initialize(project=GEE_PROJECT)
+        return True
+    except Exception as exc:
+        print(f"   AVISO: no se pudo inicializar GEE ({exc}); se usará el método legado.")
+        return False
 
-    def ha_clase(col, clase):
-        return round((comp[col] == clase).sum() * ha, 2)
 
-    hb = ha_clase("clase_base",   "bosque")
-    ha_ = ha_clase("clase_actual", "bosque")
+def cargar_aoi_y_area(nombre_alcaldia: str):
+    """Devuelve (geometría EE, nombre_real, area_ha) leídos del GeoJSON oficial."""
+    with open(ALC, "r", encoding="utf-8") as f:
+        gj = json.load(f)
+    norm = normalizar(nombre_alcaldia)
+    for feat in gj["features"]:
+        props = feat["properties"]
+        if normalizar(str(props.get("alcaldia", ""))) == norm:
+            area_ha = props.get("area_ha")
+            area_ha = float(area_ha) if area_ha is not None else None
+            return ee.Geometry(feat["geometry"]), props["alcaldia"], area_ha
+    return None, None, None
+
+
+def clasificacion_dw(aoi, anio: int):
+    """Clasificación Dynamic World (moda ene-may) remapeada a las clases del proyecto."""
+    dw = (ee.ImageCollection("GOOGLE/DYNAMICWORLD/V1")
+          .filterBounds(aoi)
+          .filterDate(f"{anio}-01-01", f"{anio}-05-31"))
+    moda = dw.select("label").mode()
+    return moda.remap(DW_KEYS, DW_VALUES, defaultValue=0).rename("clase_id")
+
+
+def _histograma(img, aoi) -> dict[int, float]:
+    """frequencyHistogram de clase_id sobre todo el polígono (wall-to-wall, scale=10m)."""
+    d = img.reduceRegion(
+        reducer=ee.Reducer.frequencyHistogram(),
+        geometry=aoi,
+        scale=10,
+        maxPixels=int(1e10),
+    ).get("clase_id")
+    crudo = ee.Dictionary(d).getInfo() or {}
+    return {int(float(k)): float(v) for k, v in crudo.items()}
+
+
+def _hist_a_ha(hist: dict[int, float], area_ha: float) -> dict:
+    """Convierte conteos de píxeles por clase a hectáreas escalando por el área oficial.
+
+    Se usan solo las clases válidas (1-6) como denominador; los píxeles sin dato
+    (clase 0) se ignoran y el total se reparte sobre el `area_ha` oficial del polígono.
+    """
+    validos = {k: v for k, v in hist.items() if k in CLASE_POR_ID}
+    total = sum(validos.values())
+    out = {nombre: 0.0 for nombre in CLASES}
+    if total > 0:
+        for k, v in validos.items():
+            out[CLASE_POR_ID[k]] = round((v / total) * area_ha, 2)
+    return out
+
+
+def areas_wall_to_wall(aoi, ab: int, aa: int, area_ha: float, es_conservacion: bool):
+    """Calcula hectáreas por clase contando TODOS los píxeles del polígono (no muestras).
+
+    Para alcaldías de conservación, los píxeles que eran bosque en el año base y
+    pasaron a pastizal/urbano/suelo en el año actual se reetiquetan como 'deforestado'
+    (clase 6) en el año actual, de modo que las clases siguen siendo mutuamente
+    excluyentes y suman el área total.
+    """
+    base_img   = clasificacion_dw(aoi, ab)
+    actual_img = clasificacion_dw(aoi, aa)
+
+    if es_conservacion:
+        defor = base_img.eq(1).And(actual_img.gte(2)).And(actual_img.lte(4))
+        actual_img = actual_img.where(defor, 6)
+
+    areas_base   = _hist_a_ha(_histograma(base_img, aoi),   area_ha)
+    areas_actual = _hist_a_ha(_histograma(actual_img, aoi), area_ha)
+    return areas_base, areas_actual
+
+
+def calcular_metricas(comp: pd.DataFrame, alcaldia: str, ab: int, aa: int,
+                      areas_base: dict | None = None, areas_actual: dict | None = None) -> dict:
+    """Calcula métricas combinando dos fuentes:
+
+    - Hectáreas por clase: conteo wall-to-wall en GEE escalado por el área oficial
+      (`areas_base`/`areas_actual`). Si no se proveen (GEE no disponible), se cae al
+      método legado donde cada muestra cruzada equivale a 0.01 ha (pixel 10×10 m).
+    - Conteos de puntos de pérdida/ganancia: siempre del cruce de muestras 2016 vs 2024
+      (son los marcadores que dibuja el mapa).
+    """
+    muestras_totales = len(comp)
+
+    if areas_base is None or areas_actual is None:
+        # Modo legado: cada muestra cruzada = 0.01 ha (pixel 10×10 m)
+        ha_pixel = 0.01
+
+        def ha_clase(col, clase):
+            return round(int((comp[col] == clase).sum()) * ha_pixel, 2)
+
+        areas_base   = {c: ha_clase("clase_base", c)   for c in CLASES}
+        areas_actual = {c: ha_clase("clase_actual", c) for c in CLASES}
+        metodo = "muestras_0.01ha"
+    else:
+        metodo = "wall_to_wall"
+
+    hb  = areas_base["bosque"]
+    ha_ = areas_actual["bosque"]
     delta_ha  = round(ha_ - hb, 2)
     delta_pct = round((delta_ha / hb * 100) if hb > 0 else 0.0, 2)
 
@@ -148,22 +263,23 @@ def calcular_metricas(comp: pd.DataFrame, alcaldia: str, ab: int, aa: int) -> di
         "alcaldia":           alcaldia,
         "anio_base":          ab,
         "anio_actual":        aa,
-        "total_puntos":       len(comp),
+        "total_puntos":       muestras_totales,
+        "metodo_ha":          metodo,
         "ha_bosque_base":     hb,
         "ha_bosque_actual":   ha_,
         "delta_ha":           delta_ha,
         "delta_pct":          delta_pct,
         "puntos_perdida":     int(comp["perdida_bosque"].sum()),
         "puntos_ganancia":    int(comp["ganancia_bosque"].sum()),
-        "ha_urbano_base":     ha_clase("clase_base",   "urbano"),
-        "ha_urbano_actual":   ha_clase("clase_actual", "urbano"),
-        "ha_pastizal_base":   ha_clase("clase_base",   "pastizal"),
-        "ha_pastizal_actual": ha_clase("clase_actual", "pastizal"),
-        "ha_agua_base":       ha_clase("clase_base",   "agua"),
-        "ha_agua_actual":     ha_clase("clase_actual", "agua"),
-        "ha_suelo_base":      ha_clase("clase_base",   "suelo_desnudo"),
-        "ha_suelo_actual":    ha_clase("clase_actual", "suelo_desnudo"),
-        "ha_deforestado":     ha_clase("clase_actual", "deforestado"),
+        "ha_urbano_base":     areas_base["urbano"],
+        "ha_urbano_actual":   areas_actual["urbano"],
+        "ha_pastizal_base":   areas_base["pastizal"],
+        "ha_pastizal_actual": areas_actual["pastizal"],
+        "ha_agua_base":       areas_base["agua"],
+        "ha_agua_actual":     areas_actual["agua"],
+        "ha_suelo_base":      areas_base["suelo_desnudo"],
+        "ha_suelo_actual":    areas_actual["suelo_desnudo"],
+        "ha_deforestado":     areas_actual["deforestado"],
     }
 
 
@@ -210,7 +326,23 @@ def main() -> None:
     df_actual["confianza"] = 1.0
     df_actual.to_csv(OUT / f"training_samples_{s}.csv", index=False)
 
-    metricas = calcular_metricas(comparativa, alc, ab, aa)
+    # Hectáreas por clase: conteo wall-to-wall en GEE escalado por el área oficial
+    # (area_ha del GeoJSON). Si GEE no está disponible, se usa el método legado.
+    areas_base = areas_actual = None
+    es_conservacion = any(normalizar(c) == normalizar(alc) for c in CONSERVACION)
+    if inicializar_ee():
+        aoi, _nombre, area_ha = cargar_aoi_y_area(alc)
+        if aoi is not None and area_ha:
+            print(f"   Área oficial: {area_ha:,.1f} ha — contando píxeles wall-to-wall en GEE...")
+            try:
+                areas_base, areas_actual = areas_wall_to_wall(aoi, ab, aa, area_ha, es_conservacion)
+            except Exception as exc:
+                print(f"   AVISO: wall-to-wall falló ({exc}); se usará el método legado.")
+                areas_base = areas_actual = None
+        else:
+            print("   AVISO: no se encontró geometría/area_ha de la alcaldía; método legado.")
+
+    metricas = calcular_metricas(comparativa, alc, ab, aa, areas_base, areas_actual)
     (OUT / f"metricas_{s}_{ab}vs{aa}.json").write_text(
         json.dumps(metricas, indent=2, ensure_ascii=False), encoding="utf-8"
     )

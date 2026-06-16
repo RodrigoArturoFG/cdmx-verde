@@ -1,12 +1,12 @@
 REPORTE COMPARATIVA TLALPAN — 2016 vs 2024
 ==================================================
 Puntos analizados  : 3,066
-Bosque 2016         : 8.0 ha
-Bosque 2024         : 7.9 ha
-Delta bosque       : -0.1 ha (-0.8%)
+Bosque 2016         : 13,005.8 ha
+Bosque 2024         : 12,614.0 ha
+Delta bosque       : -391.8 ha (-3.0%)
 Puntos pérdida     : 96
 Puntos ganancia    : 90
 
-Urbano  2016->2024   : 7.5 -> 7.8 ha
-Pastizal 2016->2024  : 7.9 -> 6.7 ha
-Deforestado        : 1.0 ha (zonas conservación)
+Urbano  2016->2024   : 8,528.4 -> 8,918.8 ha
+Pastizal 2016->2024  : 9,073.6 -> 7,567.3 ha
+Deforestado        : 1,811.7 ha (zonas conservación)

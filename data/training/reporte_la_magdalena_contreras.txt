@@ -1,12 +1,12 @@
 REPORTE COMPARATIVA LA MAGDALENA CONTRERAS — 2016 vs 2024
 ==================================================
 Puntos analizados  : 2,981
-Bosque 2016         : 8.2 ha
-Bosque 2024         : 8.0 ha
-Delta bosque       : -0.2 ha (-2.3%)
+Bosque 2016         : 4,159.9 ha
+Bosque 2024         : 4,181.4 ha
+Delta bosque       : +21.5 ha (+0.5%)
 Puntos pérdida     : 43
 Puntos ganancia    : 24
 
-Urbano  2016->2024   : 7.8 -> 7.8 ha
-Pastizal 2016->2024  : 7.3 -> 6.1 ha
-Deforestado        : 0.4 ha (zonas conservación)
+Urbano  2016->2024   : 1,753.9 -> 1,780.5 ha
+Pastizal 2016->2024  : 408.8 -> 256.9 ha
+Deforestado        : 109.0 ha (zonas conservación)

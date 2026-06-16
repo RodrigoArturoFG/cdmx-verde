@@ -1,12 +1,12 @@
 REPORTE COMPARATIVA TLÁHUAC — 2016 vs 2024
 ==================================================
 Puntos analizados  : 3,483
-Bosque 2016         : 5.1 ha
-Bosque 2024         : 5.9 ha
-Delta bosque       : +0.8 ha (+14.8%)
+Bosque 2016         : 35.0 ha
+Bosque 2024         : 45.8 ha
+Delta bosque       : +10.8 ha (+31.0%)
 Puntos pérdida     : 3
 Puntos ganancia    : 79
 
-Urbano  2016->2024   : 7.6 -> 8.0 ha
-Pastizal 2016->2024  : 8.5 -> 7.7 ha
-Deforestado        : 0.0 ha (zonas conservación)
+Urbano  2016->2024   : 4,309.9 -> 4,636.1 ha
+Pastizal 2016->2024  : 3,643.3 -> 3,474.2 ha
+Deforestado        : 15.4 ha (zonas conservación)

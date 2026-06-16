@@ -10,6 +10,7 @@ export default defineConfig({
       '/cobertura': 'http://localhost:8000',
       '/job': 'http://localhost:8000',
       '/cache': 'http://localhost:8000',
+      '/imagenes': 'http://localhost:8000',
     }
   }
 })

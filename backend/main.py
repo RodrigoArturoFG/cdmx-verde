@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 
-from .routers import alcaldias, cobertura, jobs
+from .routers import alcaldias, cobertura, jobs, imagenes
 
 BASE = Path(__file__).resolve().parents[1]
 CACHE = BASE / "cache"
@@ -29,6 +29,7 @@ app.add_middleware(
 app.include_router(alcaldias.router, prefix="/alcaldias", tags=["alcaldias"])
 app.include_router(cobertura.router, prefix="/cobertura", tags=["cobertura"])
 app.include_router(jobs.router, prefix="/job", tags=["jobs"])
+app.include_router(imagenes.router, prefix="/imagenes", tags=["imagenes"])
 
 app.mount("/cache", StaticFiles(directory=str(CACHE)), name="cache")
 

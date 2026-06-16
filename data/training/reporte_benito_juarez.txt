@@ -1,12 +1,12 @@
 REPORTE COMPARATIVA BENITO JUÁREZ — 2016 vs 2024
 ==================================================
 Puntos analizados  : 1,685
-Bosque 2016         : 8.0 ha
-Bosque 2024         : 8.0 ha
-Delta bosque       : -0.0 ha (-0.1%)
+Bosque 2016         : 14.3 ha
+Bosque 2024         : 7.6 ha
+Delta bosque       : -6.7 ha (-46.6%)
 Puntos pérdida     : 1
 Puntos ganancia    : 0
 
-Urbano  2016->2024   : 8.0 -> 8.0 ha
-Pastizal 2016->2024  : 0.8 -> 0.8 ha
+Urbano  2016->2024   : 2,652.5 -> 2,659.6 ha
+Pastizal 2016->2024  : 1.1 -> 0.8 ha
 Deforestado        : 0.0 ha (zonas conservación)

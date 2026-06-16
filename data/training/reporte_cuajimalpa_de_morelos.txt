@@ -1,12 +1,12 @@
 REPORTE COMPARATIVA CUAJIMALPA DE MORELOS — 2016 vs 2024
 ==================================================
 Puntos analizados  : 3,035
-Bosque 2016         : 8.8 ha
-Bosque 2024         : 7.9 ha
-Delta bosque       : -0.9 ha (-9.8%)
+Bosque 2016         : 4,022.4 ha
+Bosque 2024         : 3,916.8 ha
+Delta bosque       : -105.7 ha (-2.6%)
 Puntos pérdida     : 123
 Puntos ganancia    : 37
 
-Urbano  2016->2024   : 7.5 -> 7.5 ha
-Pastizal 2016->2024  : 9.5 -> 6.4 ha
-Deforestado        : 1.0 ha (zonas conservación)
+Urbano  2016->2024   : 2,584.7 -> 2,626.8 ha
+Pastizal 2016->2024  : 489.1 -> 314.0 ha
+Deforestado        : 244.8 ha (zonas conservación)

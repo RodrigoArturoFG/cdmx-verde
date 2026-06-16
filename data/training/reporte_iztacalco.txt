@@ -1,12 +1,12 @@
 REPORTE COMPARATIVA IZTACALCO — 2016 vs 2024
 ==================================================
 Puntos analizados  : 2,467
-Bosque 2016         : 4.0 ha
-Bosque 2024         : 3.0 ha
-Delta bosque       : -1.0 ha (-24.4%)
+Bosque 2016         : 10.7 ha
+Bosque 2024         : 2.9 ha
+Delta bosque       : -7.8 ha (-72.7%)
 Puntos pérdida     : 129
 Puntos ganancia    : 31
 
-Urbano  2016->2024   : 7.9 -> 8.0 ha
-Pastizal 2016->2024  : 10.8 -> 8.0 ha
+Urbano  2016->2024   : 2,255.5 -> 2,284.6 ha
+Pastizal 2016->2024  : 30.2 -> 14.7 ha
 Deforestado        : 0.0 ha (zonas conservación)

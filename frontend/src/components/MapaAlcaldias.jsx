@@ -294,7 +294,7 @@ export default function MapaAlcaldias({ geojson, seleccionada, onSeleccionar, co
           PÉRDIDA DE BOSQUE → CLASE 2024
         </div>
         <div style={{ fontSize: 10, color: '#888', lineHeight: 1.4, marginTop: -2 }}>
-          Puntos donde un píxel de bosque 2016 pasó a otra clase en 2024 (no son ha totales).
+          Puntos donde un píxel de bosque 2016 pasó a otra clase en 2024. Las hectáreas se calculan por conteo wall-to-wall (todos los píxeles, Dynamic World).
         </div>
         <div style={{ display: 'flex', gap: 6, fontSize: 10 }}>
           <button

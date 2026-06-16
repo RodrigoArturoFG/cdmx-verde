@@ -88,6 +88,6 @@ GEE (Dynamic World v1) → scripts/02_muestras_gee.py → data/training/muestras
 - **Slug normalization:** Used consistently across scripts, backend, and cache filenames to handle accents/spaces in borough names
 - **Background jobs:** FastAPI `BackgroundTasks` + frontend polling every 3s; job state held in-memory (not persistent across restarts)
 - **Cache-first strategy:** Backend checks `cache/comparativa_{slug}.json` before launching the pipeline
-- **Hectare values:** Sample-based estimates, not full polygon area calculations
+- **Hectare values:** Wall-to-wall pixel counts. `scripts/03_fusion_validacion.py` classifies the whole borough polygon with Dynamic World (same remap as script 02), counts every pixel per class via GEE `reduceRegion` + `frequencyHistogram` (scale=10m), and scales the class fractions by the official `area_ha` property in `data/alcaldias/alcaldias_cdmx.geojson` so class areas sum to the real borough area. Falls back to the legacy `0.01 ha/sample` method only if GEE is unavailable (`metodo_ha` field in the metrics JSON records which was used). `deforestado` is computed as a per-pixel change (forest→pasture/urban/bare) in conservation boroughs. See `docs/ha_estimation_fix.md`. Note: `puntos_perdida`/`puntos_ganancia` remain sample-based (they are the map's change markers, not areas).
 - **`png_url` field:** Exists in Pydantic schema but always returns `null` — satellite image generation is not implemented
 - **Vite proxy:** All frontend API calls use a relative base URL; proxy routes to `localhost:8000`

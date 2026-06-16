@@ -58,3 +58,8 @@ viz/
 claude.md
 # NOTA: data/training/, data/alcaldias/ y cache/ SI se versionan a proposito,
 # para que otros equipos no tengan que reprocesar ~1 hora en GEE.
+
+# ──────────────────────────────────────────────────────────────
+# Notas personales (no compartir)
+# ──────────────────────────────────────────────────────────────
+docs/git-flujo-commit-push.md

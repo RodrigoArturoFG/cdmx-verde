@@ -99,6 +99,19 @@ def load_puntos_perdida(alcaldia: str) -> list[dict]:
     return puntos
 
 
+def perdida_csv_path(alcaldia: str) -> Path | None:
+    """Resuelve el CSV de pérdida, con fallback por substring del slug."""
+    path = _perdida_csv(alcaldia)
+    if path.exists():
+        return path
+    import glob
+    norm = _slug(alcaldia)
+    for c in glob.glob(str(DATA / "perdida_*_2016vs2024.csv")):
+        if norm in Path(c).stem:
+            return Path(c)
+    return None
+
+
 def create_job() -> str:
     job_id = str(uuid.uuid4())[:8]
     _jobs[job_id] = JobStatus(job_id=job_id, status="pending")

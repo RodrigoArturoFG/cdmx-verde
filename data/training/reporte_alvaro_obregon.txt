@@ -1,12 +1,12 @@
 REPORTE COMPARATIVA ÁLVARO OBREGÓN — 2016 vs 2024
 ==================================================
 Puntos analizados  : 2,716
-Bosque 2016         : 8.1 ha
-Bosque 2024         : 8.0 ha
-Delta bosque       : -0.1 ha (-1.7%)
+Bosque 2016         : 3,049.6 ha
+Bosque 2024         : 2,983.1 ha
+Delta bosque       : -66.6 ha (-2.2%)
 Puntos pérdida     : 61
 Puntos ganancia    : 47
 
-Urbano  2016->2024   : 7.9 -> 7.8 ha
-Pastizal 2016->2024  : 7.0 -> 6.5 ha
-Deforestado        : 0.4 ha (zonas conservación)
+Urbano  2016->2024   : 6,021.0 -> 6,074.7 ha
+Pastizal 2016->2024  : 486.5 -> 315.7 ha
+Deforestado        : 203.9 ha (zonas conservación)

@@ -168,6 +168,14 @@ npm install
 npm run dev
 ```
 
+o
+
+```powershell
+cd frontend
+pnpm install
+pnpm dev
+```
+
 El frontend queda en: http://localhost:5173
 
 ### Paso 4 — Usar el sistema

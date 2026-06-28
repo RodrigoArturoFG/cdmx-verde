@@ -1,5 +1,5 @@
 # CDMX Verde — Sistema de comparativa de cobertura vegetal
-
+Try now in: https://miguetssj-cdmx-verde.hf.space/
 Visualiza la pérdida de áreas verdes en las 16 alcaldías de la CDMX
 comparando imágenes Sentinel-2 de **2016 vs 2024**, clasificadas con
 Dynamic World y un clasificador kNN.
